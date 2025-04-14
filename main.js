@@ -3,10 +3,23 @@ import { readFile } from 'fs/promises';
 import { resolve } from 'path';
 import * as sass from 'sass';
 
-const scssPath = resolve('./styles.scss');
-const scssCode = await readFile(scssPath, 'utf-8');
+const scssPaths = [
+    resolve('./styles.scss'),
+    resolve('./test.scss'),
+    // resolve('./components/buttons.scss')
+];
 
-const { css } = sass.compileString(scssCode);
+const url = 'https://google.com';
+
+const compiledCSSArray = await Promise.all(
+    scssPaths.map(async (path) => {
+        const scssCode = await readFile(path, 'utf-8');
+        const { css } = sass.compileString(scssCode, { url: new URL(`file://${path}`) });
+        return css;
+    })
+);
+
+const combinedCSS = compiledCSSArray.join('\n');
 
 const browser = await puppeteer.launch({
     headless: false,
@@ -15,8 +28,8 @@ const browser = await puppeteer.launch({
 });
 
 const page = await browser.newPage();
-await page.goto('https://google.com');
+await page.goto(url);
 
-await page.addStyleTag({ content: css });
+await page.addStyleTag({ content: combinedCSS });
 
-console.log('🎨 Estilos inyectados. Puedes interactuar con el sitio.');
+console.log('🎨 Todos los estilos SCSS compilados e inyectados');
