@@ -1,15 +1,26 @@
+import 'dotenv/config';
 import puppeteer from 'puppeteer';
-import { readFile } from 'fs/promises';
-import { resolve } from 'path';
+import { readFile, readdir } from 'fs/promises';
+import { resolve, extname } from 'path';
 import * as sass from 'sass';
 import chokidar from 'chokidar';
 
-const scssPaths = [
-    resolve('./styles.scss'),
-    resolve('./test.scss'),
-];
+const url = process.env.URL;
+const scssSourceFolder = process.env.SCSS_SOURCE_FOLDER;
 
-const url = 'https://google.com';
+async function getScssPaths(directory) {
+    try {
+        const files = await readdir(directory, { withFileTypes: true });
+        return files
+            .filter((file) => file.isFile() && extname(file.name) === '.scss')
+            .map((file) => resolve(directory, file.name));
+    } catch (error) {
+        console.error(`❌ Error reading SCSS directory: ${error.message}`);
+        return [];
+    }
+}
+
+const scssPaths = await getScssPaths(scssSourceFolder);
 
 async function compileAndInject(page) {
     try {
@@ -45,7 +56,7 @@ const browser = await puppeteer.launch({
     args: ['--start-maximized']
 });
 
-const page = await browser.newPage();
+const [page] = await browser.pages();
 await page.goto(url);
 
 await compileAndInject(page);
