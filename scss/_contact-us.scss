@@ -1,0 +1,11 @@
+@import "_variables.scss";
+
+.ari-section.contact-hero-section{
+    // display: none;
+    .contactTitle{
+        color: black !important;
+        .hero-secondary-text{
+            color: black !important;
+        }
+    }
+}
