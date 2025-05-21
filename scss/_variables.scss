@@ -1,0 +1,284 @@
+@import '_mixins.scss';
+/*=== Main Color Variables ===*/
+$gray: #f5f5f5;
+$dark-blue: #002157;
+$blue: #1877f2;
+$yellow: #f3e31d;
+$brand-primary: $dark-blue; // Override Primary Bootstrap Color - Green
+$brand-secondary: #000000; // Secondary Site Color
+
+$primecolor-contrast: #f3e31d; // Color used over primary color. (Search Icon, Buttons, Item Group headers)
+
+$img-path: 'https://published-assets.ari-build.com/Content/Published/Site/36534/Images';
+
+//*=========== Custom Font ===========*//
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap';
+
+$headings-font-family: 'Zilla Slab', sans-serif;
+$site-fontfamily: 'Montserrat', sans-serif;
+$chakra-fontfamily: 'Chakra Petch', sans-serif;
+
+//=====================================//
+//-------------- Header ---------------//
+//=====================================//
+
+$header-bgcolor: #fff; // Header Background Color
+
+$header-displaybgimage: false; // Set to false to hide Header background image - $header-heroshot-bg must be set to "false" for this to funcion correctly.
+$header-bgimage: url(''); // Background image for Header
+
+$header-heroshot-bg: false; // Set to true to allow for the Hero Shot image to be used as the Header background. This will add an additional padding-top property to the .sft-cover area.
+$header-heroshot-padding: 0; // If $header-heroshot-bg is true, set this to the height of the header in order to add enough padding for the hero shot to go behind the header but keep the content in the same place.
+$header-heroshot-bgcolor: rgba(
+    $header-bgcolor,
+    1
+); // Set a background color with a transparency on top of the Hero Shot image in the Header.
+
+$header-mainiconcolor: $brand-secondary; // Color for most Header Font Awesome colors (Mainly Contact Info Icons)
+$header-secondaryiconcolor: $brand-secondary; // Color for other Header Font Awesome icon colors (Search icon)
+
+/*============ Dealer Logo =============*/
+$dealer-bgcolor: transparent; // Background Color of Dealer Logo Area
+
+/*======== Contact Information =========*/
+$contactinfo-textcolor: #000; // Text Color of Header Contact Info
+
+$contactinfo-linkcolor: #000; // Link Color of Header Contact Info
+$contactinfo-linkhvrcolor: $brand-secondary; // Link Hover  Color of Header Contact Info
+
+/*======= Social Media Styling =========*/
+$smedia-iconsize: 17px; // Social Media Icon Size
+
+$smedia-darkBG: true; // Turn to true when a white icon is needed on a dark background
+
+$smedia-displaycircle: false; // Change to true to display circle social media icons.
+$smedia-bgsize: 32px; // Height and Width of Social Media Icon Background
+$smedia-bg-borderradius: 100%; // Border Radius of Social Media Icon Background
+
+/*========= Search Button Style =========*/
+$search-btn-bg: transparent;
+$search-btn-hvrbg: transparent;
+$search-btn-iconcolor: #000;
+
+/*========= Primary Navigation =========*/
+$primenav-bgcolor: #fff; // Nav background color
+$primenav-topborder: 0px; // Top border of nav on larger viewports
+$primenav-btmborder: 0px; // Bottom border of nav
+
+$primenav-linkcolor: #000; // Nav parent link color
+$primenav-linkhvrcolor: $primecolor-contrast; // Nav Parent link hover color
+
+$primenav-link-bgcolor: transparent; // Nav parent link background color
+$primenav-link-bgvrcolor: transparent; // Nav parent link background hover color
+
+$primenav-dropdown-bgcolor: $brand-secondary; // Dropdown menu background color
+$primenav-dropdown-border: 0px solid $brand-secondary; // Dropdown menu outside border
+$primenav-dropdown-childborder: 0px solid $brand-secondary; // Dropdown menu inside border
+
+$primenav-dropdown-linkcolor: $brand-primary; //  Dropdown link color
+$primenav-dropdown-linkhvrcolor: $primecolor-contrast; // Dropdown link hover color
+
+$primenav-dropdown-linkbghvrcolor: $brand-secondary; // Dropdown link background hover color
+
+$primenav-fontfamily: $chakra-fontfamily; //Use $site-fontfamily for the body font, $headings-font-family for the heading font, or your own custom font property.
+$primenav-dropdown-fontfamily: $chakra-fontfamily; //Use $site-fontfamily for the body font, $headings-font-family for the heading font, or your own custom font property.
+$primenav-fontsize: 15px; // Nav parent link font size
+$primenav-texttransform: uppercase; // Nav parent link text transform
+$primenav-fontstyle: normal; // Nav parent link font style
+$primenav-fontweight: 400; // Nav parent link font weight
+
+$primenav-dividerdisplay: false; // Boolean dictating whether or not to display nav parent link $primenav-dividerdisplay
+$primenav-dividercolor: #fff; // Nav parent link divider color
+
+$primenav-dropdownicon-display: false; // Display navigation dropdown icon on larger viewport screens
+
+/*====== Primary Navigation Mobile Styles ======*/
+$primenav-mobile-linkcolor: $primenav-linkcolor; // Mobile nav parent link color
+$primenav-mobile-iconcolor: #000; // Mobile Nav search and nav icon color
+
+$primenav-mobile-fontsize: 16px; // Mobile nav parent link font size
+$primenav-mobile-dropdown-fontsize: 14px; // Mobile nav child link font size
+
+$primenav-mobile-dropdownicon-display: true; // Boolean dictating whether or not the nav child link icons appear
+$primenav-mobile-dropdownicon: '\f101'; // Unicode character for nav child link icon. To add a different icon find the unicode character or the desired icon at http://fontawesome.io/
+
+$primenav-mobile-iconanimation: true; // Boolean dictating whether or not the mobile nav hamburger menu icon will animate into an X
+
+//=========================================//
+//-------------- End Header ---------------//
+//=========================================//
+
+//=========================================//
+//----------------- CTAs ------------------//
+//=========================================//
+
+//Add the .primary-cta class to the ctas (in layout manager) to apply these styles
+$primary-cta-title-color: #fff;
+$primary-cta-title-fontsize: 30px;
+$primary-cta-title-fontweight: 700;
+$primary-cta-title-fontfamily: $headings-font-family;
+
+$primary-cta-subtitle-color: #fff;
+$primary-cta-subtitle-fontsize: 20px;
+$primary-cta-subtitle-fontweight: 400;
+$primary-cta-subtitle-fontfamily: $site-fontfamily;
+
+$primary-cta-title-color-mobile: #fff;
+$primary-cta-title-fontsize-mobile: 30px;
+$primary-cta-title-fontweight-mobile: 700;
+$primary-cta-title-fontfamily-mobile: $headings-font-family;
+
+$primary-cta-subtitle-color-mobile: #fff;
+$primary-cta-subtitle-fontsize-mobile: 20px;
+$primary-cta-subtitle-fontweight-mobile: 400;
+$primary-cta-subtitle-fontfamily-mobile: $site-fontfamily;
+
+//Add the .secondary-cta class to the ctas (in the layout manager) to apply these styles
+$secondary-cta-title-color: #fff;
+$secondary-cta-title-fontsize: 30px;
+$secondary-cta-title-fontweight: 700;
+$secondary-cta-title-fontfamily: $headings-font-family;
+
+$secondary-cta-subtitle-color: #fff;
+$secondary-cta-subtitle-fontsize: 20px;
+$secondary-cta-subtitle-fontweight: 400;
+$secondary-cta-subtitle-fontfamily: $site-fontfamily;
+
+$secondary-cta-title-color-mobile: #fff;
+$secondary-cta-title-fontsize-mobile: 30px;
+$secondary-cta-title-fontweight-mobile: 700;
+$secondary-cta-title-fontfamily-mobile: $headings-font-family;
+
+$secondary-cta-subtitle-color-mobile: #fff;
+$secondary-cta-subtitle-fontsize-mobile: 20px;
+$secondary-cta-subtitle-fontweight-mobile: 400;
+$secondary-cta-subtitle-fontfamily-mobile: $site-fontfamily;
+
+//Add the .tertiary-cta class to the ctas (in the layout manager) to apply these styles
+$tertiary-cta-title-color: #fff;
+$tertiary-cta-title-fontsize: 30px;
+$tertiary-cta-title-fontweight: 700;
+$tertiary-cta-title-fontfamily: $headings-font-family;
+
+$tertiary-cta-subtitle-color: #fff;
+$tertiary-cta-subtitle-fontsize: 20px;
+$tertiary-cta-subtitle-fontweight: 400;
+$tertiary-cta-subtitle-fontfamily: $site-fontfamily;
+
+$tertiary-cta-title-color-mobile: #fff;
+$tertiary-cta-title-fontsize-mobile: 30px;
+$tertiary-cta-title-fontweight-mobile: 700;
+$tertiary-cta-title-fontfamily-mobile: $headings-font-family;
+
+$tertiary-cta-subtitle-color-mobile: #fff;
+$tertiary-cta-subtitle-fontsize-mobile: 20px;
+$tertiary-cta-subtitle-fontweight-mobile: 400;
+$tertiary-cta-subtitle-fontfamily-mobile: $site-fontfamily;
+//=========================================//
+//--------------- End CTAs ----------------//
+//=========================================//
+
+//==========================================//
+//-------------- Main Content --------------//
+//==========================================//
+
+$maincontent-fontcolor: #000; // All site font color
+
+$component-title-fontcolor: $primecolor-contrast;
+$component-title-bgcolor: $brand-primary;
+
+$maincontent-linkcolor: $brand-secondary; // All site link color
+$maincontent-linkhvrcolor: #000; // All site link hover color
+
+$maincontent-primeheader-fontcolor: $brand-secondary; // Main header tag font color (h1 & h2)
+$maincontent-otherheader-fontcolor: $maincontent-fontcolor; // Other header tag font color (h3 & h4)
+
+/*======= Logobar ======*/
+
+$logobar-border: 0px solid #bfbfbf; // Border for individual logos in logobar
+
+/*======= Hours of Operation ======*/
+
+$hours-header-fontsize: 18px; // Hours header font size
+$hours-header-fontweight: normal; // Hours header font weight
+$hours-header-fontstyle: normal; // Hours header font style
+$hours-header-fontcolor: $component-title-fontcolor; // Hours header font color
+$hours-header-bgcolor: $component-title-bgcolor; // Hours header background color
+
+$hours-content-fontsize: 13px; // Hours content font size
+
+$hours-content-fontcolor: $maincontent-fontcolor; // Hours content font color
+$hours-content-bgcolor: transparent; // Hours component background color
+
+$hours-content-headerfont-size: 22px; // Header in content font size
+$hours-header-headerfont-fontweight: normal; // Header in content font weight
+$hours-heade-headerfontr-fontstyle: normal; // Header in content font style
+
+/*============ Item Groups =============*/
+
+// Item Groups Styles
+$featuredItems-style: 3; //Choose 1, 2, or 3. Defaults to 3 if an incorrect value is given.
+$featuredItems-style-color: $brand-primary; // Main color used for the styling of the Item Groups
+
+$featuredItems-padding: 0px; // Padding of entire Item Group Component
+$featuredItems-margin: 0px; // Margin of entire Item Group Component
+
+// Title
+
+$featuredItems-title-color: #fff; // Featured Items Title Color
+$featuredItems-title-fontsize: 30px; // Featured Items Title font Size
+$featuredItems-title-texttransform: uppercase; // Featured Items Title text transform
+$featuredItems-title-fontweight: 700; // Featured Items Title font weight
+$featuredItems-title-fontstyle: normal; // Featured Items Title font style
+
+/*=========== Merchandising ===========*/
+
+$offer-margin: 0px 0px 0px 0px; // Offer Rotator Margins
+
+$merch-thumbnail-bgcolor: #23272e; // Thumbnail preview area background color
+
+$merch-mobileicon-bgcolor: #909090; // Mobile Icon color
+$merch-mobileicon-bgactivecolor: $brand-primary; // Mobile icon active state color
+
+$merch-desktop-imgpreview-focuscolor: $brand-primary; // Thumbnail preview focus outline color
+
+//==============================================//
+//-------------- End Main Content --------------//
+//==============================================//
+
+//=========================================//
+//--------------- Footer ------------------//
+//=========================================//
+
+$footer-margin: 0px; // Footer Margin
+$footer-padding: 0px; // Footer padding
+
+$footer-bgcolor: #fff; // Footer background color
+$footer-separatorborder: 0px solid #5e6063; // Footer center divider color
+
+// Generic Footer Colors
+$footer-textcolor: #000; // Generic footer text color
+$footer-fontsize: 13px; // Generic footer text/link font size
+
+$footer-linkcolor: $footer-textcolor; // Generic footer link color
+$footer-linkhvrcolor: $footer-textcolor; // Generic footer link hover color
+
+$footericon-color: $brand-primary; // Generic footer icon colors
+
+$footercopyright-textcolor: $footer-textcolor; // Text color for the footer copyright info
+
+// Footer Navigation
+$footernav-linkcolor: $footercopyright-textcolor; // Link color for the Footer Navigation
+$footernav-hvrlinkcolor: $footercopyright-textcolor; // Hover link color for the Footer Navigation
+$footernav-bordercolor: $footercopyright-textcolor; // Color of footer nav dividers
+
+// Footer Social Media
+$footersmedia-darkBG: false; // Turn to true when a white icon is needed on a dark background
+
+$smedia-footer-displaycircle: true; // Change to true to display circle social media icons.
+$smedia-footer-bgsize: 32px; // Height and Width of Social Media Icon Background
+$smedia-footer-bg-borderradius: 100%; // Border Radius of Social Media Icon Background
+
+$footerA-footersmedia-iconsize: 17px; // Social media icon size for Footer A
+$footerB-footersmedia-iconsize: 17px; // Social media icon size for Footer B
+$footerC-footersmedia-iconsize: 17px; // Social media icon size for Footer C

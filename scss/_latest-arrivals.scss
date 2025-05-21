@@ -1,0 +1,41 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.latest-arrivals {
+    .ari-row{
+        .ari-column{
+            .component{
+                // @include contain-self();
+                .featuredItems{
+                    .row{
+                        .col-xs-12{
+                            .headerTitle{
+                                text-align: start;
+                                font: 400 100px/130px 'Squada One', sans-serif;
+                            }
+                            .item-group{
+                                .slick-track{
+                                    .slick-slide{
+                                        .itemDetail{
+                                            .itemTitle{
+                                                a{
+                                                }
+                                            }
+                                            .itemPrice{
+                                                strong{
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

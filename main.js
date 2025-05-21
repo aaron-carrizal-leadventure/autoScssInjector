@@ -8,21 +8,21 @@ import chokidar from 'chokidar';
 const url = process.env.URL;
 const scssSourceFolder = process.env.SCSS_SOURCE_FOLDER;
 
-async function getScssPaths(directory) {
+let scssPaths = [];
+
+async function updateScssPaths(directory) {
     try {
         const files = await readdir(directory, { withFileTypes: true });
-        return files
+        scssPaths = files
             .filter((file) => file.isFile() && extname(file.name) === '.scss')
             .map((file) => resolve(directory, file.name));
+        console.log('📂 SCSS paths updated:', scssPaths);
     } catch (error) {
-        console.error(`❌ Error reading SCSS directory: ${error.message}`);
-        return [];
+        console.error(`❌ Error updating SCSS paths: ${error.message}`);
     }
 }
 
-const scssPaths = await getScssPaths(scssSourceFolder);
-
-async function compileAndInject(page) {
+async function compileScss() {
     try {
         const compiledCSSArray = await Promise.all(
             scssPaths.map(async (path) => {
@@ -31,41 +31,80 @@ async function compileAndInject(page) {
                 return css;
             })
         );
+        return compiledCSSArray.join('\n');
+    } catch (error) {
+        console.error('❌ Error compiling SCSS:', error.message);
+        return '';
+    }
+}
 
-        const combinedCSS = compiledCSSArray.join('\n');
-
-        await page.evaluate((css) => {
+async function injectStyles(page, css) {
+    try {
+        await page.evaluate((styles) => {
             const existing = document.getElementById('injected-scss');
             if (existing) existing.remove();
 
             const style = document.createElement('style');
             style.id = 'injected-scss';
-            style.textContent = css;
+            style.textContent = styles;
             document.head.appendChild(style);
-        }, combinedCSS);
+        }, css);
 
-        console.log('🔄 SCSS recompiled and injected');
+        console.log('🔄 Styles injected successfully');
     } catch (error) {
-        console.error('❌ Error compiling SCSS:', error.message);
+        console.error('❌ Error injecting styles:', error.message);
     }
 }
+
+async function compileAndInject(page) {
+    const css = await compileScss();
+    await injectStyles(page, css);
+}
+
+await updateScssPaths(scssSourceFolder);
 
 const browser = await puppeteer.launch({
     headless: false,
     defaultViewport: null,
-    args: ['--start-maximized']
+    args: ['--start-maximized'],
 });
 
 const [page] = await browser.pages();
 await page.goto(url);
 
+// Initial compilation and injection
 await compileAndInject(page);
 
-const watcher = chokidar.watch(scssPaths, {
-    ignoreInitial: true,
+// Reinject styles on page navigation or reload
+page.on('framenavigated', async () => {
+    console.log('🌐 Page navigated or reloaded');
+    await compileAndInject(page);
+});
+
+// Watch SCSS files for changes and additions
+const watcher = chokidar.watch(scssSourceFolder, {
+    ignoreInitial: false,
 });
 
 watcher.on('change', async (path) => {
-    console.log(`📁 Change detected in: ${path}`);
-    await compileAndInject(page);
+    if (extname(path) === '.scss') {
+        console.log(`📁 Change detected in: ${path}`);
+        await compileAndInject(page);
+    }
+});
+
+watcher.on('add', async (path) => {
+    if (extname(path) === '.scss') {
+        console.log(`📁 New SCSS file detected: ${path}`);
+        scssPaths.push(resolve(path));
+        await compileAndInject(page);
+    }
+});
+
+watcher.on('unlink', async (path) => {
+    if (extname(path) === '.scss') {
+        console.log(`📁 SCSS file removed: ${path}`);
+        scssPaths = scssPaths.filter((p) => p !== resolve(path));
+        await compileAndInject(page);
+    }
 });

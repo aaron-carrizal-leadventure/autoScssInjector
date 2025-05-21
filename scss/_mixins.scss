@@ -1,0 +1,76 @@
+@function responsive-vw($medida) {
+    $var: $medida * 0.08;
+    @return $var + vw;
+}
+
+@function line-height($font-size, $line-spacing) {
+    $var: $line-spacing / $font-size;
+    @return $var;
+}
+
+@function responsive-px($min-px, $max-px, $min-vw, $max-vw) {
+    @return calc(
+        #{$min-px}px + (#{$max-px} - #{$min-px}) *
+            ((100vw - #{$min-vw}px) / (#{$max-vw} - #{$min-vw}))
+    );
+}
+
+@mixin letter-spacing($value) {
+    letter-spacing: calc(#{$value} / 1000) + em;
+}
+
+@mixin transition($properties: all, $duration: 300ms, $timing: ease-in-out) {
+    transition: #{$properties} #{$duration} #{$timing};
+}
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: 769px){
+        @content;
+    }
+}
+
+@mixin flex() {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@function px-to-vw($px, $screen-width: 1920) {
+    @return calc((#{$px} / #{$screen-width}) * 100vw);
+}
+
+@mixin hover(){
+    @include transition();
+    opacity: 1;
+
+    &:hover{
+        opacity: 0.75;
+        text-decoration: none !important;
+    }
+}
+
+@mixin justify-center(){
+    @include flex();
+    justify-content: center;
+}
+
+@mixin contain-self(){
+    width: 85vw;
+    margin: auto;
+
+    @include mobile{
+        width: 95vw;
+    }
+}
+
+@function responsive-font($base-size, $min-factor: 0.75) {
+    $min-size: $base-size * $min-factor;
+    $fluid-size: ($base-size / 1080) * 100vw;
+    @return clamp(#{$min-size}px, #{$fluid-size}, #{$base-size}px);
+}

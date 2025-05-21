@@ -1,0 +1,39 @@
+<div class="contactus">
+    <h1>Contact us</h1>
+    <div class="address">
+        <a href="/locations" title="View Map & Hours">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="address1">{{Locations.0.Address.StreetAddress1}}</span>{{#if
+            Locations.0.Address.StreetAddress2}}<span
+                class="address2">{{Locations.0.Address.StreetAddress2}}</span>{{/if}}
+            <span class="city">{{Locations.0.Address.City}}</span>, <span
+                class="region">{{Locations.0.Address.Region}}</span> <span
+                class="postalcode">{{Locations.0.Address.PostalCode}}</span>
+        </a>
+    </div>
+    <div class="phone">
+        <a href="tel:+1{{Locations.0.Address.PhoneNumber}}" title="Call us at {{Locations.0.Address.PhoneNumber}}"
+            class="phone-link">
+            <i class="fa-solid fa-phone"></i>
+            <span>{{Locations.0.Address.PhoneNumber}}</span>
+        </a>
+    </div>
+    <a href="/locations" class="locations">
+        Maps + Hours
+    </a>
+</div>
+
+<div class="links">
+    <h1>Quick links</h1>
+    <a href="/aboutus" title="About us">About us</a>
+    <a href="/search/inventory" title="All inventory">All inventory</a>
+    <a href="/contactus" title="Contact us">Contact us</a>
+    <a href="/financing" title="About us">Financing</a>
+</div>
+
+<div class="connect">
+    <h1>Connect</h1>
+    <a href="https://www.facebook.com/brakeawaytrailers/" title="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+</div>

@@ -1,0 +1,80 @@
+.navbar-nav {
+    li {
+        .root-link {
+            font: 800 responsive-font(20) / responsive-font(22) 'Kanit',
+                sans-serif;
+            font-style: italic;
+            text-transform: uppercase;
+            white-space: nowrap;
+            position: relative;
+            color: black;
+            text-decoration: none;
+
+            @include transition(color 0.3s ease);
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%) scaleX(0);
+                transform-origin: center;
+                width: 100%;
+                height: 3px;
+                background-color: white;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover {
+                color: black;
+
+                &::after {
+                    transform: translateX(-50%) scaleX(1);
+                    background-color: $red;
+                }
+            }
+        }
+
+        .dropdown-menu {
+            width: auto;
+            li {
+                padding: 5px 10px;
+
+                a {
+                    background-color: black;
+                    color: white;
+                    font: 800 responsive-font(18) / responsive-font(20) 'Kanit',
+                        sans-serif;
+                    font-style: italic;
+                    text-transform: uppercase;
+                    position: relative;
+                    text-decoration: none;
+
+                    @include transition(color 0.3s ease);
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%) scaleX(0);
+                        transform-origin: center;
+                        width: 100%;
+                        height: 3px;
+                        background-color: $red;
+                        transition: transform 0.3s ease;
+                    }
+
+                    &:hover {
+                        color: white;
+
+                        &::after {
+                            transform: translateX(-50%) scaleX(1);
+                            background-color: $red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

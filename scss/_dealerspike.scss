@@ -1,0 +1,50 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+.footer {
+    .dealerspike {
+        background-color: black;
+
+        .ari-column {
+            .component {
+                width: 85vw;
+                margin: auto;
+
+                @include mobile {
+                    width: 100%;
+                }
+                > div {
+                    @include flex();
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 20px;
+                    flex-direction: row;
+
+                    @include mobile {
+                        flex-direction: column;
+                        gap: 20px;
+                    }
+
+                    .text {
+                        color: white;
+                        text-align: center;
+                    }
+
+                    .site-links {
+                        color: #505050;
+                        text-align: center;
+                        a {
+                            color: white;
+                            margin: 0 10px;
+                            @include transition();
+
+                            &:hover {
+                                opacity: 0.5;
+                                text-decoration: none !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
