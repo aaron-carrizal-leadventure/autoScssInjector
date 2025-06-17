@@ -1,0 +1,56 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.dropdown {
+    @include desktop {
+        position: relative !important;
+        .meganav {
+            display: flex !important;
+            flex-direction: row;
+            overflow: hidden;
+            // move this as needed
+            width: 80vw !important;
+            position: absolute;
+            // move this as needed
+            left: 20vw;
+            transform: translateX(-50%);
+            z-index: 8;
+            background-color: white !important;
+            .dropdown-item {
+                width: 20% !important;
+                background-color: white !important;
+                > a {
+                    display: none;
+                }
+                .card {
+                    padding: 10px;
+                    a {
+                        @include flex();
+                        justify-content: center;
+                        img {
+                            object-fit: contain;
+                            width: px-to-vw(130);
+                            @include transition();
+                        }
+                        @include transition();
+                        &:hover {
+                            background-color: white !important;
+                            img {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include mobile {
+        .meganav {
+            .dropdown-item {
+                .card {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
