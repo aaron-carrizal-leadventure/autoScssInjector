@@ -1,0 +1,18 @@
+<div class="slick-slideshow" {{#each customDataModel.settings}} data-{{@key}}="{{@value}}" {{/each}}>
+    {{#each customDataModel.slides}}
+    {{#if link}}
+    <a href="{{link}}" {{#if title}} title="{{title}}" {{/if}} {{#if linkTarget}} target="{{linkTarget}}" {{/if}}>
+        {{/if}}
+        <div class="card">
+            <img src="{{image}}" {{#if alt}} alt="{{alt}}" {{/if}} {{#if title}} title="{{title}}" {{/if}} class="" />
+            <div class="overlay">
+                <h2>{{title}}</h2>
+                <p class="button">View More</p>
+            </div>
+
+        </div>
+        {{#if link}}
+    </a>
+    {{/if}}
+    {{/each}}
+</div>

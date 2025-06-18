@@ -75,3 +75,35 @@ $(document).ready(function () {
     });
 });
 
+/* FIX YOUTUBE LOGO ON /LOCATIONS */
+
+$(document).ready(function() {
+    if (window.location.pathname === '/locations') {
+        $('i.fa.fa-2x.fa-fw.fa-youtube-play').css({
+            'background-color': 'red',
+            'width': '50px',
+            'height': '50px',
+            'color': 'white',
+            'line-height': '50px'
+        });
+    }
+});
+
+
+/* VARIABLE FOOTER PADDING */
+
+$(document).ready(function() {
+    if ($('button.btn.btn-primary.btn-block.cant-find-button').length) {
+        $('.footer').css({
+            'padding': '5vh 0 10vh 0',
+            'important': 'true'
+        });
+    }
+});
+
+
+/* FIX DIRECTIONS LINKS */
+
+setTimeout(function() {
+        $("a.location-directions").attr('target', '_blank');
+    }, 1000);

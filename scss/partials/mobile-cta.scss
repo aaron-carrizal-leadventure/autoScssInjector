@@ -1,0 +1,42 @@
+&.mobile-cta-1 {
+            display: none;
+            @include mobile {
+                display: block;
+            }
+            .ari-column {
+                .component {
+                    width: 100vw;
+
+                    button {
+                        color: $gray;
+                        text-shadow: none;
+                    }
+                    .slick-slide {
+                        .card{
+                            @include flex();
+                            flex-direction: column;
+                            justify-content: center;
+                            border: 1px solid $gray;
+                            border-radius: 16px;
+                            width: 80vw;
+                            margin: auto;
+                            img {
+                                min-width: 20vw;
+                                max-width: 200px;
+                                object-fit: contain;
+                                margin: auto;
+                            }
+                            h2,
+                            p {
+                                font: 500 20px 'Rubik';
+                                text-align: center;
+                                text-transform: uppercase;
+                            }
+                            p {
+                                color: $orange;
+                            }
+                        }
+                    }
+                }
+            }
+        }

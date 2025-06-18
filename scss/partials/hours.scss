@@ -1,7 +1,6 @@
 #hours {
     .col-md-4.col-lg-3 {
-        width: 100% !important;
-
+        width: auto !important;
         .panel {
             background-color: transparent;
             border: none;
@@ -9,13 +8,15 @@
                 display: none;
             }
             .panel-body {
+                @include flex();
+                flex-direction: column;
                 padding: 0;
                 .timeTitle {
-                    color: $yellow;
-                    font: bold 21px/29px 'Zilla Slab', serif;
+                    color: white;
+                    // font: bold 21px/29px 'Zilla Slab', serif;
                     text-transform: uppercase;
                 }
-                .hours{
+                .hours {
                     color: white;
                 }
             }

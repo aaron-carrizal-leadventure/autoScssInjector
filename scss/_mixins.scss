@@ -71,6 +71,6 @@
 
 @function responsive-font($base-size, $min-factor: 0.75) {
     $min-size: $base-size * $min-factor;
-    $fluid-size: ($base-size / 1080) * 100vw;
+    $fluid-size: calc(#{$base-size} / 1080 * 100vw);
     @return clamp(#{$min-size}px, #{$fluid-size}, #{$base-size}px);
 }

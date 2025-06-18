@@ -1,0 +1,25 @@
+{
+    "slides": [
+        {
+            "image": "//cdnmedia.endeavorsuite.com/images/organizations/80ff2e58-84c0-4a65-a16a-194a86fe9c70/cta-1/cat-cargo.png",
+            "alt": "Enclosed/ Cargo",
+            "link": "/search/inventory/class/Enclosed%20Cargo",
+            "class": "Enclosed/ Cargo",
+            "type": "Trailers"
+        }
+    ],
+    "settings": {
+        "autoplay": true,
+        "autoplay-speed": 3000,
+        "arrows": true,
+        "dots": false,
+        "draggable": true,
+        "fade": false,
+        "infinite": true,
+        "pause-on-focus": true,
+        "pause-on-hover": true,
+        "speed": 300,
+        "swipe": true,
+        "touch-move": true
+    }
+}

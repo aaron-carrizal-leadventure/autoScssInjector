@@ -27,7 +27,17 @@ async function compileScss() {
         const compiledCSSArray = await Promise.all(
             scssPaths.map(async (path) => {
                 const scssCode = await readFile(path, 'utf-8');
-                const { css } = sass.compileString(scssCode, { url: new URL(`file://${path}`) });
+                const { css } = sass.compileString(scssCode, {
+                    url: new URL(`file://${path}`),
+                    quietDeps: true,
+                    logger: {
+                        warn: (message) => {
+                            // if (!message.includes('Sass @import rules are deprecated')) {
+                            //     console.warn(message);
+                            // }
+                        },
+                    },
+                });
                 return css;
             })
         );
@@ -37,6 +47,7 @@ async function compileScss() {
         return '';
     }
 }
+
 
 async function injectStyles(page, css) {
     try {

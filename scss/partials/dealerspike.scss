@@ -1,0 +1,41 @@
+.dealerspike {
+    .ari-column {
+        .component {
+            @include flex();
+            flex-direction: row;
+            justify-content: space-evenly;
+            @include mobile {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2vh 0;
+            }
+
+            .text {
+                order: 1;
+                // font: 400 responsive-font(16) 'Poppins';
+
+                @include mobile {
+                    order: 3;
+                }
+            }
+            .site-links {
+                order: 2;
+                @include flex();
+                flex-direction: row;
+                gap: 2vw;
+                // font: 400 responsive-font(16) 'Poppins';
+            }
+            .dealerspike-logo {
+                order: 3;
+                @include mobile {
+                    order: 1;
+                }
+                img {
+                    object-fit: contain;
+                    max-width: 280px;
+                }
+            }
+        }
+    }
+}
