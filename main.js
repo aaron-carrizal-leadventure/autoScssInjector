@@ -8,6 +8,7 @@ import chokidar from 'chokidar';
 const url = process.env.URL;
 const scssSourceFolder = process.env.SCSS_SOURCE_FOLDER;
 
+let loadingAnimation;
 let scssPaths = [];
 
 async function updateScssPaths(directory) {
@@ -81,7 +82,23 @@ const browser = await puppeteer.launch({
 });
 
 const [page] = await browser.pages();
-await page.goto(url);
+
+try {
+    const loadingFrames = ['🔵', '🔵', '🟢', '🟢', '🟡', '🟡', '🟠', '🟠', '🔴', '🔴']
+    let frameIndex = 0;
+
+    loadingAnimation = setInterval(() => {
+        process.stdout.write(`\r🌐 Loading page ${loadingFrames[frameIndex++ % loadingFrames.length]} `);
+    }, 200);
+
+    await page.goto(url, { timeout: 60000, waitUntil: 'domcontentloaded' });
+
+    clearInterval(loadingAnimation);
+    process.stdout.write('\r✅ Navigation successful\n');
+} catch (error) {
+    clearInterval(loadingAnimation);
+    console.error('\r❌ Navigation failed:', error.message);
+}
 
 // Initial compilation and injection
 await compileAndInject(page);
