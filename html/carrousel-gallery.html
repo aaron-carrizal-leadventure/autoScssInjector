@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.lazyload.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.arrows.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.thumbs.css" />
+    <style>
+        #myCarousel {
+            --f-arrow-pos: 10px;
+            --f-arrow-bg: rgba(255, 255, 255, 0.75);
+            --f-arrow-hover-bg: rgba(255, 255, 255, 1);
+            --f-arrow-color: #333;
+            --f-arrow-width: 40px;
+            --f-arrow-height: 40px;
+            --f-arrow-svg-width: 20px;
+            --f-arrow-svg-height: 20px;
+            --f-arrow-svg-stroke-width: 2px;
+            --f-arrow-border-radius: 50%;
+
+            height: 400px;
+        }
+
+        #myCarousel .f-carousel__slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #myCarousel img {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="f-carousel" id="myCarousel">
+        <div class="f-carousel__slide" data-fancybox="gallery"
+            data-src="//cdnmedia.endeavorsuite.com/images/ThumbGenerator/Thumb.aspx?img=//cdnmedia.endeavorsuite.com/images/organizations/c71f2d12-6636-4043-aa64-cf97f7de92cd/content/gallery/gallery-1.jpg"
+            data-thumb-src="//cdnmedia.endeavorsuite.com/images/ThumbGenerator/Thumb.aspx?img=//cdnmedia.endeavorsuite.com/images/organizations/c71f2d12-6636-4043-aa64-cf97f7de92cd/content/gallery/gallery-1.jpg">
+            <img src="//cdnmedia.endeavorsuite.com/images/ThumbGenerator/Thumb.aspx?img=//cdnmedia.endeavorsuite.com/images/organizations/c71f2d12-6636-4043-aa64-cf97f7de92cd/content/gallery/gallery-1.jpg"
+                alt="Image #1" />
+        </div>
+        <div class="f-carousel__slide" data-fancybox="gallery"
+            data-src="//cdnmedia.endeavorsuite.com/images/ThumbGenerator/Thumb.aspx?img=//cdnmedia.endeavorsuite.com/images/organizations/c71f2d12-6636-4043-aa64-cf97f7de92cd/content/gallery/gallery-2.jpg"
+            data-thumb-src="//cdnmedia.endeavorsuite.com/images/ThumbGenerator/Thumb.aspx?img=//cdnmedia.endeavorsuite.com/images/organizations/c71f2d12-6636-4043-aa64-cf97f7de92cd/content/gallery/gallery-2.jpg">
+            <img src="//cdnmedia.endeavorsuite.com/images/ThumbGenerator/Thumb.aspx?img=//cdnmedia.endeavorsuite.com/images/organizations/c71f2d12-6636-4043-aa64-cf97f7de92cd/content/gallery/gallery-2.jpg"
+                alt="Image #2" />
+        </div>
+        <div class="f-carousel__slide" data-fancybox="gallery"
+            data-src="//cdnmedia.endeavorsuite.com/images/ThumbGenerator/Thumb.aspx?img=//cdnmedia.endeavorsuite.com/images/organizations/c71f2d12-6636-4043-aa64-cf97f7de92cd/content/gallery/gallery-3.jpg"
+            data-thumb-src="//cdnmedia.endeavorsuite.com/images/ThumbGenerator/Thumb.aspx?img=//cdnmedia.endeavorsuite.com/images/organizations/c71f2d12-6636-4043-aa64-cf97f7de92cd/content/gallery/gallery-3.jpg">
+            <img src="//cdnmedia.endeavorsuite.com/images/ThumbGenerator/Thumb.aspx?img=//cdnmedia.endeavorsuite.com/images/organizations/c71f2d12-6636-4043-aa64-cf97f7de92cd/content/gallery/gallery-3.jpg"
+                alt="Image #3" />
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.lazyload.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.arrows.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.thumbs.umd.js"></script>
+    <script>
+        Carousel(document.getElementById("myCarousel"), {
+            // Your custom options
+        }, {
+            Lazyload,
+            Arrows,
+            Thumbs
+        }).init();
+
+        Fancybox.bind("[data-fancybox]", {
+            // Your custom options
+        });
+    </script>
+</body>
+
+</html>

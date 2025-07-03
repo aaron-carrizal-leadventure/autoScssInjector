@@ -1,0 +1,95 @@
+.featuredItems {
+    .col-xs-12 {
+        margin: 0;
+        padding: 0;
+        .headerTitle {
+            color: black;
+            text-align: start;
+            // font: 700 responsive-font(30) 'Teko';
+            padding: 0;
+            margin: 0;
+            padding-bottom: 2vh;
+        }
+
+        .item-group {
+            @include desktop {
+                @include flex();
+            }
+            // justify-content: end;
+            @include slick-arrow-styler(
+                '\f060',
+                '\f061',
+                responsive-font(22),
+                responsive-font(30),
+                responsive-font(30)
+            );
+            .slick-prev,
+            .slick-next {
+                @include desktop {
+                    position: static;
+                    transform: translateX(80vw) translateY(-5vh);
+                }
+                border: 3px $red solid;
+                padding: 10px;
+                @include mobile {
+                    transform: none;
+                }
+            }
+
+            .slick-prev {
+                order: 1;
+                margin-right: 20px;
+                &::before {
+                    left: -9px !important;
+                    top: -13px !important;
+                }
+            }
+
+            .slick-next {
+                order: 2;
+
+                &::before {
+                    left: -7px !important;
+                    top: -13px !important;
+                }
+            }
+            .slick-list {
+                order: 3;
+                .slick-track {
+                    .slick-slide {
+                        border: none;
+                        box-shadow: none;
+                        height: auto;
+                        .itemDetail {
+                            // border-top: $red 1px solid;
+                            @include flex();
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 1vh;
+                            .itemTitle {
+                                a {
+                                    font: 400 responsive-font(18) 'Kanti',
+                                        sans-serif;
+                                    text-transform: uppercase;
+                                }
+                            }
+                            .btn-view-details {
+                                background-color: black;
+                                color: white;
+                                text-transform: uppercase;
+                                padding: 0.5vh 1vw;
+                                font: 400 responsive-font(18) 'Kanit';
+                                @include transition();
+                                &:hover {
+                                    // background-color: $red;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

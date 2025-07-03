@@ -29,7 +29,7 @@
     }
 }
 @mixin desktop {
-    @media (min-width: 769px){
+    @media (min-width: 769px) {
         @content;
     }
 }
@@ -45,32 +45,120 @@
     @return calc((#{$px} / #{$screen-width}) * 100vw);
 }
 
-@mixin hover(){
+@mixin hover() {
     @include transition();
     opacity: 1;
 
-    &:hover{
+    &:hover {
         opacity: 0.75;
         text-decoration: none !important;
     }
 }
 
-@mixin justify-center(){
+@mixin justify-center() {
     @include flex();
     justify-content: center;
 }
 
-@mixin contain-self(){
+@mixin contain-self() {
     width: 85vw;
     margin: auto;
 
-    @include mobile{
+    @include mobile {
         width: 95vw;
     }
 }
 
 @function responsive-font($base-size, $min-factor: 0.75) {
     $min-size: $base-size * $min-factor;
-    $fluid-size: calc(#{$base-size} / 1080 * 100vw);
+    $fluid-size: ($base-size / 1080) * 100vw;
     @return clamp(#{$min-size}px, #{$fluid-size}, #{$base-size}px);
+}
+
+//-----------------------------------------------
+//---------------- ARROWS MIXINS ----------------
+//-----------------------------------------------
+
+// Arrows Offer Rotator / Logobar
+// assigns left and right icons as well as their font-size & dimension
+// $icon-right, $icon-left: FontAwesome Code '\f053'
+@mixin slick-arrow-styler(
+    $icon-left,
+    $icon-right,
+    $font-size,
+    $width,
+    $height
+) {
+    .slick-arrow {
+        text-shadow: none;
+        width: auto;
+        height: $height;
+        width: $width;
+        line-height: $height;
+        text-align: center;
+        &:before {
+            position: relative;
+            top: 1px; // adjust the height of the icon
+            font-family: FontAwesome;
+            font-size: $font-size;
+            vertical-align: middle;
+            line-height: 1;
+            opacity: 1;
+        }
+        &.slick-prev {
+            &:before {
+                left: -2px;
+                content: $icon-left;
+            }
+        }
+        &.slick-next {
+            &:before {
+                right: -2px;
+                content: $icon-right;
+            }
+        }
+    }
+}
+
+// sets shape, color and background color to .carousel-control
+// $shape can be: square | circle | none
+@mixin slick-arrow-button-styler($shape, $color, $bg-color) {
+    .slick-arrow {
+        opacity: 1;
+        background: $bg-color;
+        &:before {
+            color: $color;
+        }
+        @if $shape == circle {
+            border-radius: 50%;
+        } @else if $shape == square {
+            border-radius: 0;
+        }
+    }
+}
+
+// sets hover state for .carousel-control
+@mixin slick-arrow-button-hover-styler($color, $bg-color) {
+    .slick-arrow {
+        &:hover,
+        &:active,
+        &:focus {
+            background: $bg-color;
+            &:before {
+                color: $color;
+            }
+        }
+    }
+}
+
+// sets position to arrows, left - right
+@mixin slick-arrow-position($pos-left, $pos-right) {
+    .slick-arrow {
+        &.slick-prev {
+            left: $pos-left !important;
+        }
+        &.slick-next {
+            right: $pos-right !important;
+        }
+    }
 }
