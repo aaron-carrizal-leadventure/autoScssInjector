@@ -46,4 +46,10 @@ npm run dev
 ```
 This will open a new instance of the google chrome browser and load the URL provided on the ENV file, then it will compile and inject the scss styling sheets onto the web page.
 
+To use the scraper you will need to install python and its dependencies, the run this command:
+``` bash
+python scraper.py <URL> "<classes that contain all the images>"
+```
+This will create a new folder named /logos, convert all images to .png and rename them as logo-x.
+
 **You can add, remove or edit .scss files on the fly**
