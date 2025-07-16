@@ -16,7 +16,7 @@
 }
 
 @mixin letter-spacing($value) {
-    letter-spacing: calc(#{$value} / 1000) + em;
+    letter-spacing: calc(#{$value} / 1000 * 1em);
 }
 
 @mixin transition($properties: all, $duration: 300ms, $timing: ease-in-out) {
@@ -24,12 +24,31 @@
 }
 
 @mixin mobile {
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         @content;
     }
 }
+
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: 1025px) and (max-width: 1440px) {
+        @content;
+    }
+}
+
 @mixin desktop {
-    @media (min-width: 769px) {
+    @media (min-width: 1441px) {
+        @content;
+    }
+}
+
+@mixin tablet-up {
+    @media (min-width: 768px) {
         @content;
     }
 }
