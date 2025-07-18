@@ -1,3 +1,4 @@
+@import '_mixins.scss';
 @import "_variables.scss";
 
 .ari-section.contact-hero-section{
@@ -167,4 +168,54 @@
     &::after{
         border: 2px solid black !important;
     }
+}
+
+
+/* VDP */
+
+.breadcrumb-container {
+    li[itemprop='itemListElement'] {
+        a {
+            color: black;
+            text-decoration: none;
+            font-size: responsive-font(14);
+            white-space: nowrap;
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+    }
+}
+
+.sharePrint-container {
+    .btn.share-button {
+        color: black;
+        text-decoration: none;
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+    .print-box.dropdown {
+        .btn.print-button {
+            color: black;
+            text-decoration: none;
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+    }
+}
+label.form-control.search-results-count {
+    color: black;
+}
+select.form-control.sort-dd {
+    color: black;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.form-control {
+    color: black !important;
 }

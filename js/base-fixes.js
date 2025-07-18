@@ -107,3 +107,35 @@ $(document).ready(function() {
 setTimeout(function() {
         $("a.location-directions").attr('target', '_blank');
     }, 1000);
+
+
+
+/*  FIX HOURS ON /CONTACTUS */
+
+
+$(document).ready(() => {
+    if (window.location.pathname === "/contactus") {
+        const $target = $(".component.Hours_1-0-0.ari-componentinstance");
+        if ($target.length && $target.find("#hours").length) {
+            $target.css("display", "block");
+        }
+    }
+});
+
+
+/* FIX HOURS ON /LOCATIONS */
+
+
+$(document).ready(() => {
+    if (window.location.pathname === "/locations") {
+        const targetDays = ["Saturday", "Sunday"];
+        $('time[itemprop="openHours"][itemtype="http://schema.org/LocalBusiness"]').each((_, el) => {
+            const $time = $(el);
+            const dayText = $time.find('.hours-title').text().trim();
+            if (targetDays.includes(dayText)) {
+                $time.find('.timeRange.hours-end').remove();
+                $time.find('.timeRange.hours-start').css("width", "66.6%");
+            }
+        });
+    }
+});
