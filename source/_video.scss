@@ -1,0 +1,39 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+.video {
+    padding: 5vh 0;
+    background-color: black;
+    .ari-row {
+        @include flex();
+        @include mobile {
+            flex-direction: column;
+        }
+        .ari-column {
+            @include flex();
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            &.a {
+                .component {
+                    video {
+                        width: 100%;
+                    }
+                }
+            }
+            &.b {
+                flex-direction: column;
+                gap: 1vh;
+                .title span {
+                    color: $orange;
+                    font: 900 responsive-font(18) 'Montserrat';
+                    font-style: italic;
+                }
+                .paragraph span {
+                    color: white;
+                    font: 400 responsive-font(14) 'Montserrat';
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

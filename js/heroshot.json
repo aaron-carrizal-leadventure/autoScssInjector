@@ -1,0 +1,42 @@
+{
+    "slides": [
+        {
+            "image": "//published-assets.ari-build.com/Content/Published/Site/39266/images/heroshot/heroshot-1.png",
+            "alt": "Heroshot 1"
+        },
+        {
+            "image": "//published-assets.ari-build.com/Content/Published/Site/39266/images/heroshot/heroshot-2.png",
+            "alt": "Heroshot 2"
+        },
+        {
+            "image": "//published-assets.ari-build.com/Content/Published/Site/39266/images/heroshot/heroshot-3.png",
+            "alt": "Heroshot 3"
+        },
+        {
+            "image": "//published-assets.ari-build.com/Content/Published/Site/39266/images/heroshot/heroshot-4.png",
+            "alt": "Heroshot 4"
+        },
+        {
+            "image": "//published-assets.ari-build.com/Content/Published/Site/39266/images/heroshot/heroshot-5.png",
+            "alt": "Heroshot 5"
+        },
+        {
+            "image": "//published-assets.ari-build.com/Content/Published/Site/39266/images/heroshot/heroshot-6.png",
+            "alt": "Heroshot 6"
+        }
+    ],
+    "settings": {
+        "autoplay": true,
+        "autoplay-speed": 3000,
+        "arrows": false,
+        "dots": false,
+        "draggable": true,
+        "fade": false,
+        "infinite": true,
+        "pause-on-focus": true,
+        "pause-on-hover": true,
+        "speed": 300,
+        "swipe": true,
+        "touch-move": true
+    }
+}

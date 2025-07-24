@@ -1,20 +1,24 @@
 @import '_mixins.scss';
 /*=== Main Color Variables ===*/
-$gray: #f5f5f5;
-$dark-blue: #002157;
-$blue: #1877f2;
-$yellow: #f3e31d;
-$brand-primary: $dark-blue; // Override Primary Bootstrap Color - Green
-$brand-secondary: #000000; // Secondary Site Color
+$orange: #FF6D0B;
+$blue: #045592;
+$dark-blue: #274366;
+$gray: #808080;
+$dark-gray: #252525;
+$light-gray: #BDBDBD;
 
-$primecolor-contrast: #f3e31d; // Color used over primary color. (Search Icon, Buttons, Item Group headers)
+
+$brand-primary: $blue; // Override Primary Bootstrap Color - Green
+$brand-secondary: black; // Secondary Site Color
+
+$primecolor-contrast: white; // Color used over primary color. (Search Icon, Buttons, Item Group headers)
 
 $img-path: 'https://published-assets.ari-build.com/Content/Published/Site/36534/Images';
 
 //*=========== Custom Font ===========*//
-@import 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap';
 
-$headings-font-family: 'Zilla Slab', sans-serif;
+$headings-font-family: 'Montserrat', sans-serif;
 $site-fontfamily: 'Montserrat', sans-serif;
 $chakra-fontfamily: 'Chakra Petch', sans-serif;
 

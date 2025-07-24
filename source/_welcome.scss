@@ -1,0 +1,65 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+.welcome {
+    padding: 5vh 0;
+    background-image: url('https://published-assets.ari-build.com/Content/Published/Site/39266/images/welcome-bg.png');
+    background-size: cover;
+    .ari-row {
+        &.first-row {
+            .ari-column {
+                @include flex();
+                flex-direction: column;
+                gap: 1vh;
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                }
+                .paragraph {
+                    span {
+                        color: black;
+                        font: 900 responsive-font(15) 'Montserrat';
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+
+        &.second-row {
+            margin-top: 5vh;
+            .component {
+                @include flex();
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 2vh 0;
+
+                a {
+                    width: calc(100% / 3);
+                    @include flex();
+                    justify-content: center;
+                    img {
+                        width: px-to-vw(140);
+                        object-fit: scale-down;
+
+                        @include mobile {
+                            width: responsive-font(100);
+                        }
+                    }
+                }
+
+                a:nth-child(n + 4) {
+                    width: calc(100% / 5);
+                    @include mobile {
+                        width: 50%;
+                    }
+                }
+                a:nth-child(n + 8) {
+                    @include mobile {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

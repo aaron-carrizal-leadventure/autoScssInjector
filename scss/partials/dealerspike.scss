@@ -14,8 +14,8 @@
             .text {
                 order: 1;
                 // font: 400 responsive-font(16) 'Poppins';
-
                 @include mobile {
+                    text-align: center;
                     order: 3;
                 }
             }
@@ -24,6 +24,10 @@
                 @include flex();
                 flex-direction: row;
                 gap: 2vw;
+                text-align: center;
+                a{
+                    text-align: center;
+                }
                 // font: 400 responsive-font(16) 'Poppins';
             }
             .dealerspike-logo {

@@ -1,0 +1,138 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+.heroshot {
+    .ari-row {
+        @include laptop-up {
+            position: relative;
+            height: px-to-vh(640);
+            @include flex();
+            .ari-column {
+                &.a {
+                    img {
+                        height: px-to-vh(640);
+                    }
+                }
+                &.b {
+                    position: absolute;
+                    left: 0;
+                    @include flex();
+                    flex-direction: column;
+                    height: 100%;
+                    .component {
+                        height: calc(100% / 3);
+                        @include flex();
+                        .dynamic-cta {
+                            @include flex();
+                            height: 100%;
+                            a {
+                                @include flex();
+                                height: 100%;
+                                &:hover {
+                                    text-decoration: none;
+                                    div {
+                                        width: px-to-vw(260);
+                                        background-color: rgba(
+                                            $color: $gray,
+                                            $alpha: 0.75
+                                        );
+                                        h2,
+                                        p {
+                                            color: $dark-blue;
+                                        }
+                                        button {
+                                            background-color: $orange;
+                                        }
+                                    }
+                                }
+                                div {
+                                    width: px-to-vw(250);
+                                    height: 100%;
+                                    background-color: rgba(
+                                        $color: $orange,
+                                        $alpha: 0.75
+                                    );
+                                    @include flex();
+                                    flex-direction: column;
+                                    align-items: center;
+                                    justify-content: center;
+                                    gap: 0.5vh;
+                                    border-bottom: 1px solid white;
+                                    @include transition();
+                                    h2 {
+                                        margin: 0;
+                                        color: white;
+                                        text-transform: uppercase;
+                                        font: 900 px-to-vw(26) 'Montserrat';
+                                        font-style: italic;
+                                        @include transition();
+                                    }
+                                    p {
+                                        margin: 0;
+                                        color: white;
+                                        text-transform: uppercase;
+                                        font: 400 px-to-vw(16) 'Montserrat';
+                                        font-style: italic;
+                                        @include transition();
+                                    }
+                                    button {
+                                        background-color: $dark-blue;
+                                        color: white;
+                                        text-transform: uppercase;
+                                        font: 700 px-to-vw(13) 'Montserrat';
+                                        font-style: italic;
+                                        @include transition();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .ari-column {
+            &.b {
+                @include flex();
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .component {
+                    width: 100%;
+                    a {
+                        div {
+                            padding: 2vh 0;
+                            background-color: $orange;
+                            @include flex();
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 1vh;
+                            border-bottom: 1px solid white;
+                            h2 {
+                                margin: 0;
+                                text-transform: uppercase;
+                                font: 900 responsive-font(72, 0.5) 'Montserrat';
+                                color: white;
+                                font-style: italic;
+                            }
+                            p {
+                                margin: 0;
+                                text-transform: uppercase;
+                                font: 400 responsive-font(40, 0.5) 'Montserrat';
+                                color: white;
+                                font-style: italic;
+                            }
+                            button {
+                                background-color: $dark-blue;
+                                text-transform: uppercase;
+                                font: 900 responsive-font(40, 0.5) 'Montserrat';
+                                color: white;
+                                font-style: italic;
+                                padding: 1.5vh;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

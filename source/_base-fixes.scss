@@ -1,12 +1,63 @@
 @import '_mixins.scss';
-@import "_variables.scss";
+@import '_variables.scss';
 
-.ari-section.contact-hero-section{
-    background-image: url("");
+.contain {
+    width: 95vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    @include tablet {
+        width: 90vw !important;
+    }
+
+    @include laptop {
+        width: 87vw !important;
+    }
+
+    @include desktop {
+        width: 85vw !important;
+    }
+
+    @include ultra {
+        width: 80vw !important;
+    }
+}
+.self-contain {
+    width: 100vw !important;
+    padding-left: calc((100vw - 95vw) / 2) !important;
+    padding-right: calc((100vw - 95vw) / 2) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    @include tablet {
+        padding-left: calc((100vw - 90vw) / 2) !important;
+        padding-right: calc((100vw - 90vw) / 2) !important;
+    }
+
+    @include laptop {
+        padding-left: calc((100vw - 87vw) / 2) !important;
+        padding-right: calc((100vw - 87vw) / 2) !important;
+    }
+
+    @include desktop {
+        padding-left: calc((100vw - 85vw) / 2) !important;
+        padding-right: calc((100vw - 85vw) / 2) !important;
+    }
+
+    @include ultra {
+        padding-left: calc((100vw - 80vw) / 2) !important;
+        padding-right: calc((100vw - 80vw) / 2) !important;
+    }
+}
+
+.ari-section.contact-hero-section {
+    background-image: url('');
     background-size: cover;
-    .contactTitle{
+    .contactTitle {
         color: black !important;
-        .hero-secondary-text{
+        .hero-secondary-text {
             color: black !important;
         }
     }
@@ -62,7 +113,7 @@
     text-transform: uppercase;
     line-height: 1;
     margin-left: 15px;
-    @include responsive-pixels(font-size, 29, 60, 768, 1920, false);
+    // @include responsive-pixels(font-size, 29, 60, 768, 1920, false);
 }
 .contact-pg .contactTitle .us {
     color: $brand-primary;
@@ -70,7 +121,7 @@
 @media (max-width: 767px) {
     .contact-pg .contactTitle {
         margin-left: 5px;
-        @include responsive-pixels(font-size, 29, 49, 320, 767, false);
+        // @include responsive-pixels(font-size, 29, 49, 320, 767, false);
     }
 }
 .contact-pg .contactHero-info {
@@ -159,17 +210,16 @@
     display: none;
 }
 
-.PageHeadTitle_1-0-0{
+.PageHeadTitle_1-0-0 {
     display: block !important;
 }
 
-.contact-social-media-link{
+.contact-social-media-link {
     color: black !important;
-    &::after{
+    &::after {
         border: 2px solid black !important;
     }
 }
-
 
 /* VDP */
 
@@ -218,4 +268,30 @@ select.form-control.sort-dd {
 
 .form-control {
     color: black !important;
+}
+
+.PageAsset_1-0-0 {
+    .ecomm_asset {
+        .row {
+            margin: 0 !important;
+        }
+    }
+}
+
+.contactHero-info {
+    strong {
+        font-size: responsive-font(17, 0.9);
+    }
+    a {
+        span {
+            font-size: responsive-font(14, 0.9);
+        }
+    }
+}
+
+.contactHero-info-hours {
+    font-size: responsive-font(14, 0.9);
+    strong {
+        font-size: responsive-font(14, 0.9);
+    }
 }

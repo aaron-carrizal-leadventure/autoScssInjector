@@ -1,27 +1,15 @@
-<div class="contactus">
-    <h1>Contact us</h1>
-    <div class="address">
-        <a href="/locations" title="View Map & Hours">
-            <i class="fa-solid fa-location-dot"></i>
-            <span class="address1">{{Locations.0.Address.StreetAddress1}}</span>{{#if
-            Locations.0.Address.StreetAddress2}}<span
-                class="address2">{{Locations.0.Address.StreetAddress2}}</span>{{/if}}
-            <span class="city">{{Locations.0.Address.City}}</span>, <span
-                class="region">{{Locations.0.Address.Region}}</span> <span
-                class="postalcode">{{Locations.0.Address.PostalCode}}</span>
-        </a>
-    </div>
-    <div class="phone">
-        <a href="tel:+1{{Locations.0.Address.PhoneNumber}}" title="Call us at {{Locations.0.Address.PhoneNumber}}"
-            class="phone-link">
-            <i class="fa-solid fa-phone"></i>
-            <span>{{Locations.0.Address.PhoneNumber}}</span>
-        </a>
-    </div>
-    <a href="/locations" class="locations">
-        Maps + Hours
-    </a>
-</div>
+<h2>Contact us</h2>
+<a href="/contactus" title="View Map & Hours" class="address">
+    <i class="fa-solid fa-location-dot"></i>
+    <span class="address1">{{Locations.0.Address.StreetAddress1}}</span> <br>
+    <span class="city">{{Locations.0.Address.City}}</span>, <span class="region">{{Locations.0.Address.Region}}</span>
+    <span class="postalcode">{{Locations.0.Address.PostalCode}}</span>
+</a>
+<a href="tel:+1{{Locations.0.Address.PhoneNumber}}" title="Call us at {{Locations.0.Address.PhoneNumber}}"
+    class="phone">
+    <i class="fa-solid fa-phone"></i>
+    <span>{{Locations.0.Address.PhoneNumber}}</span>
+</a>
 
 <div class="links">
     <h1>Quick links</h1>
@@ -31,9 +19,12 @@
     <a href="/financing" title="About us">Financing</a>
 </div>
 
-<div class="connect">
-    <h1>Connect</h1>
-    <a href="https://www.facebook.com/brakeawaytrailers/" title="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
+<!-- <div class="connect"> -->
+    <h4>Connect</h4>
+    <a href="https://www.facebook.com/middletowntrailer/" title="Facebook">
+        <span style="font-family: 'Font Awesome 6 Brands';">&#xf39e;</span>
     </a>
-</div>
+    <a href="mailto:middletowntrailersupply@gmail.com" title="Email">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+<!-- </div> -->

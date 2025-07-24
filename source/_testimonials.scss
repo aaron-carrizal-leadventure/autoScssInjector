@@ -1,0 +1,28 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+.testimonials {
+    background-color: black;
+    padding-top: 7vh;
+    // padding-bottom: 5vh;
+    @include mobile {
+        padding-top: 15vh;
+    }
+    .ari-row {
+        .ari-column {
+            .component::before {
+                content: 'Testimonials';
+                color: white;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -2vh);
+                font: 900 responsive-font(24) 'Montserrat';
+                text-transform: uppercase;
+                font-style: italic;
+                @include mobile {
+                    transform: translate(-50%, -8vh);
+                }
+            }
+        }
+    }
+}

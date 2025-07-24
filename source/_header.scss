@@ -1,0 +1,227 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.header {
+    .ari-row {
+        .ari-column {
+            .top-row {
+                background-image: url('https://published-assets.ari-build.com/Content/Published/Site/39266/images/header-bg.png');
+                padding: 2vh 0;
+                @include flex();
+                @include mobile {
+                    flex-direction: column;
+                    gap: 1vh;
+                }
+                .ari-column {
+                    @include flex();
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    @include mobile {
+                        width: 100%;
+                    }
+
+                    &.a {
+                        .component {
+                            h2 {
+                                color: $orange;
+                                text-transform: uppercase;
+                                font: 700 responsive-font(22) 'Montserrat';
+                                font-style: italic;
+                            }
+                            a {
+                                color: $gray;
+                                text-transform: uppercase;
+                                font: 700 responsive-font(16) 'Montserrat';
+                                font-style: italic;
+                                &:hover {
+                                    text-decoration: none;
+                                }
+                                i {
+                                    color: $orange;
+                                }
+                            }
+                        }
+                    }
+
+                    &.b {
+                        .component {
+                            a {
+                                @include transition();
+                                &:hover {
+                                    filter: drop-shadow(
+                                        rgb(0, 0, 0) 0px 1px 10px
+                                    );
+                                }
+                                img {
+                                    object-fit: contain;
+                                    width: responsive-font(600);
+                                }
+                            }
+                        }
+                    }
+
+                    &.c {
+                        .component {
+                            .btn {
+                                background-color: $orange;
+                                color: white;
+                                text-transform: uppercase;
+                                font: 700 responsive-font(16) 'Montserrat';
+                                font-style: italic;
+                                @include transition();
+                                &:hover {
+                                    background-color: $gray;
+                                }
+                            }
+                            .phone {
+                                @include flex();
+                                justify-content: end;
+                                margin-top: 1vh;
+                                @include mobile {
+                                    justify-content: center;
+                                }
+                                a {
+                                    color: $blue;
+                                    font: 700 responsive-font(16) 'Montserrat';
+                                    font-style: italic;
+                                    &:hover {
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .bottom-row {
+                .ari-column {
+                    .component {
+                        .navbar-collapse {
+                            background-color: $blue;
+                            .navbar-nav {
+                                @include tablet-up {
+                                    @include flex();
+                                    justify-content: center;
+                                }
+                                li {
+                                    @include tablet-up {
+                                        flex-grow: 0;
+                                    }
+                                    .root-link {
+                                        color: white;
+                                        font: 700 px-to-vw(15) 'Montserrat';
+                                        text-transform: uppercase;
+                                        white-space: nowrap;
+                                        font-style: italic;
+
+                                        @include transition();
+                                        &:hover {
+                                            color: $orange;
+                                        }
+                                        @include mobile {
+                                            font-size: responsive-font(15);
+                                        }
+                                    }
+                                    .dropdown-menu {
+                                        width: auto;
+                                        li {
+                                            a {
+                                                background-color: $dark-blue;
+                                                color: white;
+                                                font: 700 px-to-vw(15)
+                                                    'Montserrat';
+                                                text-transform: uppercase;
+                                                font-style: italic;
+                                                padding-top: 1vh;
+                                                padding-bottom: 1vh;
+                                                @include transition();
+                                                &:hover {
+                                                    background-color: $orange;
+                                                }
+                                                @include mobile {
+                                                    font-size: responsive-font(
+                                                        15
+                                                    );
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .navbar-header {
+                            background-color: $dark-blue;
+                            display: none;
+
+                            @include mobile {
+                                @include flex();
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            button {
+                                .icon-bar {
+                                    background-color: white;
+                                }
+                            }
+                            .menu-label {
+                                color: white;
+                                font: 700 responsive-font(20) 'Montserrat',
+                                    sans-serif;
+                                font-style: italic;
+                                transform: translateY(5px);
+                            }
+                        }
+                    }
+                }
+            }
+            .second-navbar {
+                background-color: white;
+                @include mobile {
+                    display: none;
+                }
+                .ari-column {
+                    .component {
+                        @include flex();
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        a {
+                            width: calc(100% / 8);
+                            @include flex();
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 1vh 0;
+
+                            &:hover {
+                                text-decoration: none;
+                                span {
+                                    color: black;
+                                }
+                            }
+                            img {
+                                width: 80%;
+                                object-fit: contain;
+                            }
+                            span {
+                                font: 700 px-to-vw(13) 'Montserrat';
+                                font-style: italic;
+                                text-transform: uppercase;
+                                text-align: center;
+                                color: $blue;
+                                @include transition();
+                            }
+                            @include tablet {
+                                width: calc(100% / 4);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

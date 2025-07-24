@@ -1,0 +1,53 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+.specials {
+    background-color: $blue;
+    padding: 5vh 0;
+    .ari-row {
+        .ari-column {
+            .component {
+                .headerTitle {
+                    color: white;
+                    margin: 0;
+                    font: 700 responsive-font(24) 'Montserrat';
+                    font-style: italic;
+                }
+
+                .slick-track {
+                    .slick-slide {
+                        border: none;
+                        box-shadow: none;
+                        height: auto;
+
+                        .itemDetail {
+                            @include flex();
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 1vh;
+                            .itemTitle a {
+                                color: white;
+                                font: 800 responsive-font(18) 'Montserrat';
+                                text-transform: uppercase;
+                                font-style: italic;
+                            }
+                            .btn-view-details {
+                                background-color: $orange;
+                                color: white;
+                                font: 700 responsive-font(14) 'Montserrat';
+                                text-transform: uppercase;
+                                font-style: italic;
+                                padding: 1vh;
+
+                                @include transition();
+                                &:hover {
+                                    text-decoration: none;
+                                    background-color: $gray;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
