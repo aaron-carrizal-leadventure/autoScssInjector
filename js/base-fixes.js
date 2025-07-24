@@ -40,7 +40,7 @@ $(document).ready(function () {
             const href = firstChildLink.attr("href");
             const parentLink = menu.find(".root-link");
             parentLink.attr("href", href);
-            parentLink.removeAttr("data-toggle");
+            // parentLink.removeAttr("data-toggle");
             firstChildLink.parent().remove();
         }
     });

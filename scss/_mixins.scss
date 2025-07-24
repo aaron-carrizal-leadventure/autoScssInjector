@@ -47,6 +47,12 @@
     }
 }
 
+@mixin ultra {
+    @media (min-width: 1600px) {
+        @content;
+    }
+}
+
 @mixin tablet-up {
     @media (min-width: 768px) {
         @content;
