@@ -42,7 +42,7 @@
 }
 
 @mixin desktop {
-    @media (min-width: 1441px) {
+    @media (min-width: 1441px) and (max-width: 1599) {
         @content;
     }
 }
@@ -59,6 +59,17 @@
     }
 }
 
+@mixin laptop-up {
+    @media (min-width: 1025px) {
+        @content;
+    }
+}
+@mixin desktop-up {
+    @media (min-width: 1441px) {
+        @content;
+    }
+}
+
 @mixin flex() {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -68,6 +79,10 @@
 
 @function px-to-vw($px, $screen-width: 1920) {
     @return calc((#{$px} / #{$screen-width}) * 100vw);
+}
+
+@function px-to-vh($px, $screen-height: 1080) {
+    @return calc((#{$px} / #{$screen-height}) * 100vh);
 }
 
 @mixin hover() {
