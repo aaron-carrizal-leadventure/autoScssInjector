@@ -1,39 +1,63 @@
-<div class="contactus">
-    <h1>Contact us</h1>
-    <div class="address">
-        <a href="/locations" title="View Map & Hours">
-            <i class="fa-solid fa-location-dot"></i>
-            <span class="address1">{{Locations.0.Address.StreetAddress1}}</span>{{#if
-            Locations.0.Address.StreetAddress2}}<span
-                class="address2">{{Locations.0.Address.StreetAddress2}}</span>{{/if}}
-            <span class="city">{{Locations.0.Address.City}}</span>, <span
-                class="region">{{Locations.0.Address.Region}}</span> <span
-                class="postalcode">{{Locations.0.Address.PostalCode}}</span>
-        </a>
-    </div>
-    <div class="phone">
-        <a href="tel:+1{{Locations.0.Address.PhoneNumber}}" title="Call us at {{Locations.0.Address.PhoneNumber}}"
-            class="phone-link">
-            <i class="fa-solid fa-phone"></i>
-            <span>{{Locations.0.Address.PhoneNumber}}</span>
-        </a>
-    </div>
-    <a href="/locations" class="locations">
-        Maps + Hours
+<h3>Contact us</h3>
+<a href="/contactus" title="View Map & Hours">
+    <i class="fa-solid fa-location-dot"></i>
+    <span class="address1">{{Locations.0.Address.StreetAddress1}}</span>
+    <span class="city">{{Locations.0.Address.City}}</span>, <span class="region">{{Locations.0.Address.Region}}</span>
+    <span class="postalcode">{{Locations.0.Address.PostalCode}}</span>
+</a>
+<a href="tel:+1{{Locations.0.Address.PhoneNumber}}" title="Call us at {{Locations.0.Address.PhoneNumber}}"
+    class="phone-link">
+    <i class="fa-solid fa-phone"></i>
+    <span>{{Locations.0.Address.PhoneNumber}}</span>
+</a>
+<a href="tel:+1(800) 835-1554" title="Call us at (800) 835-1554" class="phone-link">
+    <i class="fa-solid fa-phone"></i>
+    <span>(800) 835-1554</span>
+</a>
+<a href="mailto:trailersales@thetrailerspecialist.com" title="Sales email">
+    <i class="fa-solid fa-envelope"></i>
+    <span>Sales</span>
+</a>
+<a href="mailto:wyattg@thetrailerspecialist.com" title="Service/Warranty email">
+    <i class="fa-solid fa-envelope"></i>
+    <span>Service/Warranty</span>
+</a>
+<a href="mailto:Parts@thetrailerspecialist.com" title="Parts email">
+    <i class="fa-solid fa-envelope"></i>
+    <span>Parts</span>
+</a>
+
+<h3>Connect</h3>
+<div>
+    <a href="https://www.facebook.com/thetrailerspecialist" class="facebook" title="Facebook" target="_blank">
+        <span style="font-family: 'Font Awesome 6 Brands';">&#xf39e;</span>
+    </a>
+
+    <a href="https://youtube.com/channel/UColAeuAckPSd2aP8hsW2uCA" class="youtube" title="YouTube" target="_blank">
+        <i class="fa fa-youtube"></i>
+    </a>
+
+    <a href="https://www.instagram.com/thetrailerspecialist" class="instagram" title="Instagram" target="_blank">
+        <i class="fa fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@thetrailerspecialist1?_t=8VFHj6rA2PL&_r=1" class="tiktok" title="Tiktok"
+        target="_blank">
+        <i class="fa-brands fa-tiktok"></i>
     </a>
 </div>
+<a href="/sitemap" title="Site Map">
+    XML Site Map
+</a>
 
-<div class="links">
-    <h1>Quick links</h1>
-    <a href="/aboutus" title="About us">About us</a>
-    <a href="/search/inventory" title="All inventory">All inventory</a>
-    <a href="/contactus" title="Contact us">Contact us</a>
-    <a href="/financing" title="About us">Financing</a>
-</div>
 
-<div class="connect">
-    <h1>Connect</h1>
-    <a href="https://www.facebook.com/brakeawaytrailers/" title="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-    </a>
-</div>
+<h4>Hours</h4>
+<ul>
+    <strong>SALES</strong>
+    <li><span>Mon - Fri</span> 8:00 AM - 5:00 PM</li>
+    <li><span>Saturday</span> 9:00 AM - 3:00 PM</li>
+    <li><span>Sunday</span> Closed</li>
+    <strong>SERVICE &amp; PARTS</strong>
+    <li><span>Mon - Fri</span> 8:00 AM - 5:00 PM</li>
+    <li><span>Sat - Sun</span> Closed</li>
+
+</ul>

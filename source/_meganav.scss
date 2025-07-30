@@ -1,0 +1,75 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.dropdown {
+    @include tablet-up {
+        position: relative !important;
+        .meganav {
+            display: flex !important;
+            flex-direction: row;
+            overflow: hidden;
+            flex-wrap: wrap;
+            justify-content: center;
+            // move this as needed
+            width: 80vw !important;
+            position: absolute;
+            // move this as needed
+            left: 30vw;
+            transform: translateX(-50%);
+            z-index: 8;
+            background-color: white !important;
+            .dropdown-item {
+                width: calc(100% / 9) !important;
+                background-color: white !important;
+                > a {
+                    display: none;
+                }
+                .card {
+                    padding: 10px;
+                    a {
+                        @include flex();
+                        justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
+                        background-color: transparent !important;
+                        gap: 1vh;
+                        img {
+                            object-fit: scale-down;
+                            width: px-to-vw(100);
+                            height: px-to-vw(60);
+                            @include transition();
+                        }
+                        p {
+                            margin: 0;
+                            padding: 0;
+                            color: black;
+                            text-transform: uppercase;
+                            text-align: center;
+                            font: 400 px-to-vw(12) 'Ubuntu';
+                            @include transition();
+                        }
+                        @include transition();
+                        &:hover {
+                            background-color: white !important;
+                            img {
+                                opacity: 0.7;
+                            }
+                            p {
+                                color: brown;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include mobile {
+        .meganav {
+            .dropdown-item {
+                .card {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}

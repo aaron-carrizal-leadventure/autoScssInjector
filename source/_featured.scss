@@ -1,0 +1,54 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+.featured {
+    padding: 5vh 0;
+    background-color: #692b10;
+    .ari-row {
+        .ari-column {
+            .component {
+                .headerTitle {
+                    color: white;
+                    text-transform: uppercase;
+                    font: 400 responsive-font(54) 'Rye';
+                }
+
+                .col-xs-12:has(.slick-track) {
+                    background-color: #2f1204;
+                    padding: 3vh 2vw;
+
+                    .slick-slide {
+                        background-color: white;
+                        border: none;
+                        box-shadow: none;
+                        height: auto;
+                        padding: 0;
+                        .itemDetail {
+                            @include flex();
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 0;
+                            .btn-view-details {
+                                width: 100%;
+                                background-color: $red;
+                                color: white;
+                                text-transform: uppercase;
+                                font: 400 responsive-font(20) 'Ubuntu';
+                                padding: 1vh;
+                                @include transition();
+                                &:hover {
+                                    background-color: black;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #moreItems {
+                    display: none;
+                }
+            }
+        }
+    }
+}

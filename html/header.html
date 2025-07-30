@@ -1,0 +1,34 @@
+<div class="address">
+    <i class="fa-solid fa-location-dot"></i>
+    <a href="/contactus" title="View Map & Hours">
+        <span class="address1">{{Locations.0.Address.StreetAddress1}}</span> <br>
+        <span class="city">{{Locations.0.Address.City}}</span>, <span
+            class="region">{{Locations.0.Address.Region}}</span>
+        <span class="postalcode">{{Locations.0.Address.PostalCode}}</span>
+    </a>
+</div>
+<h3>Serving you since 1988</h3>
+
+<div class="connect">
+    <span>Connect:</span>
+    <a href="https://www.facebook.com/thetrailerspecialist" class="facebook" title="Facebook" target="_blank">
+        <span style="font-family: 'Font Awesome 6 Brands';">&#xf39e;</span>
+    </a>
+
+    <a href="https://youtube.com/channel/UColAeuAckPSd2aP8hsW2uCA" class="youtube" title="YouTube" target="_blank">
+        <i class="fa fa-youtube"></i>
+    </a>
+
+    <a href="https://www.instagram.com/thetrailerspecialist" class="instagram" title="Instagram" target="_blank">
+        <i class="fa fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@thetrailerspecialist1?_t=8VFHj6rA2PL&_r=1" class="tiktok" title="Tiktok" target="_blank">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+</div>
+<h3>Call us or text us today</h3>
+<a href="tel:+1{{Locations.0.Address.PhoneNumber}}" title="Call us at {{Locations.0.Address.PhoneNumber}}"
+    class="phone">
+    
+    <span>{{Locations.0.Address.PhoneNumber}}</span>
+</a>

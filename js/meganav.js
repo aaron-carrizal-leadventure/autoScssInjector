@@ -38,107 +38,111 @@ $(document).ready(function () {
     }
 
     const newDivs = [
-            `<div class="card">
-                <a href="/search/inventory/class/Enclosed%20Cargo">
-                    <img src="//cdnmedia.endeavorsuite.com/images/organizations/80ff2e58-84c0-4a65-a16a-194a86fe9c70/cta-1/cat-cargo.png" alt="">
-                    <p>Enclosed/Cargo</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/class/Horse%20Trailers">
-                    <img src="//cdnmedia.endeavorsuite.com/images/organizations/80ff2e58-84c0-4a65-a16a-194a86fe9c70/cta-1/cat-horse.png" alt="">
-                    <p>Horse Trailers</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/class/Car%20Haulers">
-                    <img src="//cdnmedia.endeavorsuite.com/images/organizations/80ff2e58-84c0-4a65-a16a-194a86fe9c70/cta-1/cat-car-hauler.png" alt="">
-                    <p>Car Haulers</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/class/Dump%20Trailers">
-                    <img src="//cdnmedia.endeavorsuite.com/images/organizations/80ff2e58-84c0-4a65-a16a-194a86fe9c70/cta-1/cat-dump.png" alt="">
-                    <p>Dump Trailers</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/customurl#2">
-                    <img src="//cdnmedia.endeavorsuite.com/images/organizations/80ff2e58-84c0-4a65-a16a-194a86fe9c70/cta-1/cat-atv.png" alt="">
-                    <p>ATV/UTV/SXS Trailers</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/class/Equipment%20Trailers">
-                    <img src="//cdnmedia.endeavorsuite.com/images/organizations/80ff2e58-84c0-4a65-a16a-194a86fe9c70/cta-1/cat-equipment.png" alt="">
-                    <p>Equipment Trailers</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/class/Gooseneck">
-                    <img src="//cdnmedia.endeavorsuite.com/images/organizations/80ff2e58-84c0-4a65-a16a-194a86fe9c70/cta-1/cat-gooseneck.png" alt="">
-                    <p>Gooseneck Trailers</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/customurl#3">
-                    <img src="//cdnmedia.endeavorsuite.com/images/organizations/80ff2e58-84c0-4a65-a16a-194a86fe9c70/cta-1/cat-v-nose.png" alt="">
-                    <p>V-Nose Trailers</p>
-                </a>
-            </div>`
-        ];
+        `<div class="card">
+        <a href="/search/inventory/class/Horse%20Trailers" title="Horse Trailers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-1.png" alt="Horse Trailers">
+            <p>Horse<br>Trailers</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Living%20Quarters" title="Living Quarters">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-2.png" alt="Living Quarters">
+            <p>Living<br>Quarters</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Livestock%20Trailers" title="Stock/Combo Trailers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-3.png" alt="Stock/Combo Trailers">
+            <p>Stock/Combo<br>Trailers</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Enclosed%20Cargo" title="Enclosed Cargo Trailers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-4.png" alt="Enclosed Cargo Trailers">
+            <p>Enclosed<br>Cargo Trailers</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Toy%20Haulers" title="Toy Haulers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-5.png" alt="Toy Haulers">
+            <p>Toy<br>Haulers</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/type/Snowmobile%20Trailers" title="Snowmobile Trailers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-6.png" alt="Snowmobile Trailers">
+            <p>Snowmobile<br>Trailers</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/usage/Used/" title="Pre-Owned Trailers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-7.png" alt="Pre-Owned Trailers">
+            <p>Pre-Owned<br>Trailers</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Car%20Haulers" title="Car Haulers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-8.png" alt="Car Haulers">
+            <p>Car<br>Haulers</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Dump%20Trailers" title="Dump Trailers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-9.png" alt="Dump Trailers">
+            <p>Dump<br>Trailers</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Landscape" title="Landscape Trailers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-10.png" alt="Landscape Trailers">
+            <p>Landscape<br>Trailers</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Equipment%20Trailers" title="Equipment Trailers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-11.png" alt="Equipment Trailers">
+            <p>Equipment<br>Trailers</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Truck%20bed" title="Truck Beds">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-12.png" alt="Truck Beds">
+            <p>Truck<br>Beds</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Utility%20Trailers" title="Utility Trailers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-13.png" alt="Utility Trailers">
+            <p>Utility<br>Trailers</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Side%20by%20Side" title="Utility Side-By-Side">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-14.png" alt="Utility Side-By-Side">
+            <p>Utility<br>Side-By-Side</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory/class/Tilt%20Trailers" title="Tilt Trailers">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-15.png" alt="Tilt Trailers">
+            <p>Tilt<br>Trailers</p>
+        </a>
+    </div>`,
 
-        const newDivs2= [
-            `<div class="card">
-                <a href="/search/inventory/brand/Homesteader">
-                    <img src="https://dealer-cdn.com/skin/website/responsive/kenfeagintruckandtrailer/images/logo-homesteader.png?sv=4hrrqf?sv=x524905935" alt="">
-                    <p>Homesteader Trailers</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/brand/EZ-Hauler">
-                    <img src="https://dealer-cdn.com/skin/website/responsive/kenfeagintruckandtrailer/images/logo-ezhauler.png?sv=4hrrqf?sv=x572065798" alt="">
-                    <p>EZ-Hauler</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/brand/Sundowner%20Trailers">
-                    <img src="https://dealer-cdn.com/skin/website/responsive/kenfeagintruckandtrailer/images/logo-sundowner.png?sv=4hrrqf?sv=x875199811" alt="">
-                    <p>Sundowner Trailers</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/brand/Sure-Trac">
-                    <img src="https://dealer-cdn.com/skin/website/responsive/kenfeagintruckandtrailer/images/logo-suretrac.png?sv=4hrrqf?sv=x339909417" alt="">
-                    <p>Sure-Trac</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/brand/Nolan%20Manufacturing">
-                    <img src="https://dealer-cdn.com/skin/website/responsive/kenfeagintruckandtrailer/images/logo-nolan.png?sv=4hrrqf?sv=x1341956959" alt="">
-                    <p>Nolan Manufacturing</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/brand/Choice-Cargo">
-                    <img src="https://dealer-cdn.com/skin/website/responsive/kenfeagintruckandtrailer/images/logo-choice-cargo.png?sv=4hrrqf?sv=x1347167514" alt="">
-                    <p>Choice Cargo</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/brand/Frontier%20Trailers">
-                    <img src="https://dealer-cdn.com/skin/website/responsive/kenfeagintruckandtrailer/images/logo-frontier.png?sv=4hrrqf?sv=x2048275557" alt="">
-                    <p>Frontier Trailers</p>
-                </a>
-            </div>`,
-            `<div class="card">
-                <a href="/search/inventory/brand/Delta">
-                    <img src="https://dealer-cdn.com/skin/website/responsive/kenfeagintruckandtrailer/images/logo-delta.png?sv=4hrrqf?sv=x474407167" alt="">
-                    <p>Delta</p>
-                </a>
-            </div>`
-        ]
+        `<div class="card">
+        <a href="/search/inventory/class/Arena%20Drag" title="Arena Drag">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-16.png" alt="Arena Drag">
+            <p>Arena<br>Drag</p>
+        </a>
+    </div>`,
+        `<div class="card">
+        <a href="/search/inventory" title="Sale Barn">
+            <img src="https://published-assets.ari-build.com/Content/Published/Site/37415/images/meganav/meganav-17.png" alt="Sale Barn">
+            <p>Sale<br>Barn</p>
+        </a>
+    </div>`
+    ];
 
-    initializeMegaNav("All Trailer Inventory", newDivs, true, 'meganav-1');
-    initializeMegaNav("Brands", newDivs2, true, 'meganav-2');
+
+    initializeMegaNav("Trailer Inventory", newDivs, true, 'meganav');
 });

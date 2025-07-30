@@ -1,0 +1,145 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+.footer {
+    padding-top: 5vh;
+    border-top: 15px solid $red;
+    background-color: black;
+    .first-row {
+        @include flex();
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 2vh;
+        @include mobile {
+            flex-direction: column;
+        }
+        .ari-column {
+            width: calc(100% / 4);
+            @include mobile {
+                width: 100%;
+            }
+            @include flex();
+            justify-content: center;
+
+            h4 {
+                color: $red;
+                text-transform: uppercase;
+                font: 400 responsive-font(21) 'Rye';
+                @include mobile {
+                    text-align: center;
+                }
+            }
+            a {
+                color: white;
+                font: 400 responsive-font(14) 'Ubuntu';
+                text-transform: uppercase;
+                @include transition();
+                &:hover {
+                    text-decoration: none;
+                    color: $red;
+                }
+
+                @include mobile {
+                    text-align: center;
+                }
+            }
+
+            &.a {
+                .component {
+                    @include flex();
+                    flex-direction: column;
+                    gap: 1vh;
+                }
+            }
+
+            &.b {
+                ul {
+                    color: white;
+                    font: 400 responsive-font(14) 'Ubuntu';
+                    list-style: none;
+                    padding: 0;
+                    @include flex();
+                    flex-direction: column;
+                    gap: 1vh;
+                    @include mobile {
+                        text-align: center;
+                    }
+
+                    strong {
+                        color: brown;
+                    }
+                }
+            }
+
+            &.c {
+                ul {
+                    @include flex();
+                    flex-direction: column;
+                    gap: 1vh;
+                    @include mobile {
+                        text-align: center;
+                    }
+                }
+            }
+
+            &.d {
+                .component {
+                    @include flex();
+                    flex-direction: column;
+                    gap: 1vh;
+                    > div {
+                        @include flex();
+                        flex-direction: row;
+                        gap: 2vw;
+                        i,
+                        span {
+                            font-size: responsive-font(25);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .dealerspike {
+        .ari-column {
+            .component {
+                @include flex();
+                flex-direction: row;
+                justify-content: space-evenly;
+                @include mobile {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 2vh 0;
+                }
+
+                .text {
+                    order: 1;
+                    color: white;
+                    // font: 400 responsive-font(16) 'Poppins';
+                    @include mobile {
+                        text-align: center;
+                    }
+                }
+                .site-links {
+                    order: 2;
+                    @include flex();
+                    flex-direction: row;
+                    gap: 1vw;
+                    text-align: center;
+                    color: white;
+                    a {
+                        text-align: center;
+                        color: white;
+                    }
+                }
+                .dealerspike-logo {
+                    order: 3;
+                    img {
+                        object-fit: contain;
+                        max-width: 280px;
+                    }
+                }
+            }
+        }
+    }
+}

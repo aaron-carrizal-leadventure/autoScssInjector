@@ -1,0 +1,20 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+.heroshot {
+    .ari-row {
+        .ari-column {
+            .component {
+                .slick-heroshot {
+                    .slick-slide {
+                        width: 100%;
+                        height: 80vh !important;
+                        object-fit: cover;
+                        @include mobile {
+                            height: 40vh !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
