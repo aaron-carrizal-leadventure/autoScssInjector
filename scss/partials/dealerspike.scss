@@ -1,9 +1,12 @@
 .dealerspike {
+    padding: 5vh 0;
     .ari-column {
         .component {
             @include flex();
             flex-direction: row;
             justify-content: space-evenly;
+            gap: 1vw;
+            align-items: center;
             @include mobile {
                 flex-direction: column;
                 justify-content: center;
@@ -13,7 +16,8 @@
 
             .text {
                 order: 1;
-                // font: 400 responsive-font(16) 'Poppins';
+                font: 400 responsive-font(16) 'Poppins';
+                color: white;
                 @include mobile {
                     text-align: center;
                     order: 3;
@@ -25,10 +29,12 @@
                 flex-direction: row;
                 gap: 2vw;
                 text-align: center;
-                a{
+                color: white;
+                a {
                     text-align: center;
+                    color: white;
                 }
-                // font: 400 responsive-font(16) 'Poppins';
+                font: 400 responsive-font(16) 'Poppins';
             }
             .dealerspike-logo {
                 order: 3;
@@ -37,7 +43,21 @@
                 }
                 img {
                     object-fit: contain;
-                    max-width: 280px;
+                    width: responsive-font(280);
+                }
+            }
+
+            .socials {
+                order: 4;
+                @include flex();
+                gap: 1vw;
+                a {
+                    color: white;
+                    font-size: responsive-font(20);
+                    @include transition();
+                    &:hover {
+                        color: $blue;
+                    }
                 }
             }
         }
