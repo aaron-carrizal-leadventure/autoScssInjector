@@ -1,0 +1,50 @@
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.contacts-widget {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1200;
+    ul {
+        list-style: none;
+        @include flex();
+        flex-direction: column;
+        align-items: flex-end;
+        li {
+            padding: 2vh;
+            @include justify-center();
+            @include transition();
+
+            &:hover {
+                padding-left: 4vh;
+            }
+            a {
+                @include justify-center();
+                color: white;
+                font-size: responsive-font(24);
+                width: responsive-font(24);
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            &.facebook {
+                background-color: #1b74e4;
+            }
+
+            &.instagram {
+                background-color: #e1306c;
+            }
+            &.twitter {
+                background-color: #1da1f2;
+            }
+            &.pinterest {
+                background-color: #e60023;
+            }
+            &.youtube {
+                background-color: #ff0000;
+            }
+        }
+    }
+}
