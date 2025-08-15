@@ -1,3 +1,35 @@
+/* REPLACE ALL HORIZONTAL ADDRESS LINKS */
+
+$(document).ready(function () {
+    $('.horizontal-address').each(function () {
+        const content = $(this).html();
+        $(this).replaceWith(
+            $('<a>')
+                .attr({
+                    href: '/contactus',
+                    title: 'See Map & Hours',
+                    class: 'horizontal-address'
+                })
+                .html(content)
+        );
+    });
+});
+
+
+/* ADD ICONS TO ADDRESS AND PHONE LINKS */
+
+$(document).ready(function () {
+    $('.horizontal-address').each(function () {
+        $(this).prepend('<i class="fa-solid fa-location-dot"></i> ');
+    });
+
+    $('.business-info-phone a').each(function () {
+        $(this).prepend('<i class="fa-solid fa-phone"></i> ');
+    });
+});
+
+
+
 /* REMOVE EMPTY CONTACT US FIELDS */
 
 $(document).ready(function () {
