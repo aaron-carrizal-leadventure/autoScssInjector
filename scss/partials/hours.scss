@@ -23,3 +23,27 @@
         }
     }
 }
+
+.hours-list {
+    @include flex();
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+    li {
+        @include flex();
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
+        color: white;
+        // font: 400 responsive-font(16) 'Roboto Condensed';
+        span {
+            margin-right: 1vw;
+            // width: 2vw;
+            white-space: nowrap;
+        }
+
+        @include tablet {
+            width: 90%;
+        }
+    }
+}

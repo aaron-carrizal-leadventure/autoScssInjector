@@ -1,0 +1,30 @@
+.section-title {
+    .component {
+        @include flex();
+        position: relative;
+
+        &::after {
+            content: '';
+            height: 2px;
+            width: 102vw;
+            background-color: #616161;
+            position: absolute;
+            top: 50%;
+            left: -10vw;
+            z-index: 0;
+        }
+
+        .business-info-slogan {
+            color: $red;
+            font: 400 responsive-font(40) 'Exo';
+            position: relative;
+            z-index: 1;
+            background-color: white;
+            padding: 0 1vw;
+
+            span {
+                color: #616161;
+            }
+        }
+    }
+}
