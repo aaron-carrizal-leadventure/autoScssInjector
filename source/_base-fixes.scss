@@ -1,56 +1,6 @@
 @import '_mixins.scss';
 @import '_variables.scss';
 
-.contain {
-    width: 95vw !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-
-    @include tablet {
-        width: 90vw !important;
-    }
-
-    @include laptop {
-        width: 87vw !important;
-    }
-
-    @include desktop {
-        width: 85vw !important;
-    }
-
-    @include ultra {
-        width: 80vw !important;
-    }
-}
-.self-contain {
-    width: 100vw !important;
-    padding-left: calc((100vw - 95vw) / 2) !important;
-    padding-right: calc((100vw - 95vw) / 2) !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    @include tablet {
-        padding-left: calc((100vw - 90vw) / 2) !important;
-        padding-right: calc((100vw - 90vw) / 2) !important;
-    }
-
-    @include laptop {
-        padding-left: calc((100vw - 87vw) / 2) !important;
-        padding-right: calc((100vw - 87vw) / 2) !important;
-    }
-
-    @include desktop {
-        padding-left: calc((100vw - 85vw) / 2) !important;
-        padding-right: calc((100vw - 85vw) / 2) !important;
-    }
-
-    @include ultra {
-        padding-left: calc((100vw - 80vw) / 2) !important;
-        padding-right: calc((100vw - 80vw) / 2) !important;
-    }
-}
 
 .ari-section.contact-hero-section {
     background-image: url('');
@@ -307,5 +257,88 @@ select.form-control.sort-dd {
     font-size: responsive-font(14, 0.9);
     strong {
         font-size: responsive-font(14, 0.9);
+    }
+}
+
+
+
+.contain {
+    width: 95vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    @include tablet {
+        width: 90vw !important;
+    }
+
+    @include laptop {
+        width: 87vw !important;
+    }
+
+    @include desktop {
+        width: 85vw !important;
+    }
+
+    @include ultra {
+        width: 80vw !important;
+    }
+
+    &.no-mobile-contain {
+        @include mobile {
+            width: 100vw !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+
+            .ari-column {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
+    }
+}
+.self-contain {
+    width: 100vw !important;
+    padding-left: calc((100vw - 95vw) / 2) !important;
+    padding-right: calc((100vw - 95vw) / 2) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    @include tablet {
+        padding-left: calc((100vw - 90vw) / 2) !important;
+        padding-right: calc((100vw - 90vw) / 2) !important;
+    }
+
+    @include laptop {
+        padding-left: calc((100vw - 87vw) / 2) !important;
+        padding-right: calc((100vw - 87vw) / 2) !important;
+    }
+
+    @include desktop {
+        padding-left: calc((100vw - 85vw) / 2) !important;
+        padding-right: calc((100vw - 85vw) / 2) !important;
+    }
+
+    @include ultra {
+        padding-left: calc((100vw - 80vw) / 2) !important;
+        padding-right: calc((100vw - 80vw) / 2) !important;
+    }
+
+    &.no-mobile-contain {
+        @include mobile {
+            width: 100vw !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+
+            .ari-column {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
     }
 }

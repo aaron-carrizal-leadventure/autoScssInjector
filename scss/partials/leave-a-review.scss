@@ -1,0 +1,17 @@
+.leave-a-review {
+    a {
+        @include flex();
+        flex-direction: column;
+        align-items: center;
+        padding: 1vh 1vw;
+        border-radius: 8px;
+        background-color: $brand-primary;
+        color: white;
+        font: 700 px-to-vw(14) 'Montserrat';
+        @include transition();
+        &:hover {
+            text-decoration: none;
+            background-color: black;
+        }
+    }
+}
