@@ -6,7 +6,7 @@ $(document).ready(function () {
             return $(this).text().trim().toLowerCase() === normalizedTitle;
         });
 
-        const dropdownMenu = rootLink.closest('li.dropdown.auto-drop').find('.dropdown-menu');
+        const dropdownMenu = rootLink.siblings('li.dropdown.auto-drop');
         dropdownMenu.addClass(meganavClass);
 
         if (dropdownMenu.length > 0) {
